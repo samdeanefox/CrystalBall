@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 - (IBAction)buttonPressed;
 @property (strong, nonatomic) NSArray *predictions;
+@property(strong, nonatomic) NSArray *colors;
 
 @end
