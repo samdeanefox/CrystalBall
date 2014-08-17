@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SDFViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *predictionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 - (IBAction)buttonPressed;
+@property (strong, nonatomic) NSArray *predictions;
 
 @end
