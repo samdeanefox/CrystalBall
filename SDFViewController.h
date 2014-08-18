@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
 @property (strong, nonatomic) SDFCrystalBall *crystalBall;
 @property(strong, nonatomic) NSArray *colors;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 -(void) makePrediction;
 @end
