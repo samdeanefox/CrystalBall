@@ -21,9 +21,15 @@
     [super viewDidLoad];
     self.crystalBall = [[SDFCrystalBall alloc] init];
     
+    
+    /*
+    //Add background image
     UIImage *backgroundImage = [UIImage imageNamed:@"background"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:backgroundImage];
-    [self.view insertSubview:imageView atIndex:0];
+    [self.view insertSubview:(imageView) atIndex:0];
+    */
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
