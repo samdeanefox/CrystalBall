@@ -28,8 +28,6 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:backgroundImage];
     [self.view insertSubview:(imageView) atIndex:0];
     */
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,9 +35,38 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)buttonPressed {
-    
+
+#pragma mark -Prediction
+-(void) makePrediction {
     self.predictionLabel.text = [self.crystalBall randomPrediction];
-    self.predictionLabel.textColor = [self.crystalBall randomColor];
 }
+
+
+#pragma mark - Motion Events
+-(void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    NSLog(@"motion began");
+}
+
+-(void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    NSLog(@"motion ended");
+    if(motion == UIEventSubtypeMotionShake) {
+        [self makePrediction];
+    }
+}
+
+-(void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    NSLog(@"motion cancelled");
+}
+
+
+#pragma mark - Touch Events
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.predictionLabel.text = nil;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self makePrediction];
+}
+
+
 @end

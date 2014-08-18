@@ -12,8 +12,8 @@
 
 @interface SDFViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *predictionLabel;
-- (IBAction)buttonPressed;
 @property (strong, nonatomic) SDFCrystalBall *crystalBall;
 @property(strong, nonatomic) NSArray *colors;
 
+-(void) makePrediction;
 @end

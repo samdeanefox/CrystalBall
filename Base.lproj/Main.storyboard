@@ -31,33 +31,15 @@
                                 <color key="textColor" red="0.44384765625" green="0.073429013391490855" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZX-Qq-GKn">
-                                <rect key="frame" x="29" y="413" width="261" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="261" id="TmJ-C2-yEI"/>
-                                    <constraint firstAttribute="height" constant="47" id="pug-cs-YtU"/>
-                                </constraints>
-                                <color key="tintColor" red="0.98431364806575072" green="0.98830036330283322" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="button-off">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" image="button-on"/>
-                                <connections>
-                                    <action selector="buttonPressed" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dK3-7t-3Ma"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="QZX-Qq-GKn" secondAttribute="bottom" constant="20" id="GxQ-Fq-Rhk"/>
                             <constraint firstItem="HHt-R7-IaC" firstAttribute="centerY" secondItem="2nB-7x-kAm" secondAttribute="centerY" constant="-15" id="JVa-RR-4aY"/>
                             <constraint firstAttribute="trailing" secondItem="2nB-7x-kAm" secondAttribute="trailing" id="WkL-uA-Gks"/>
                             <constraint firstItem="2nB-7x-kAm" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="iwa-1G-GyT"/>
                             <constraint firstItem="HHt-R7-IaC" firstAttribute="centerX" secondItem="2nB-7x-kAm" secondAttribute="centerX" constant="0.5" id="py0-3W-OfM"/>
                             <constraint firstItem="2nB-7x-kAm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rUY-IT-42E"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="2nB-7x-kAm" secondAttribute="bottom" id="uBZ-HQ-Vhk"/>
-                            <constraint firstAttribute="centerX" secondItem="QZX-Qq-GKn" secondAttribute="centerX" id="vXg-wA-OnN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -71,8 +53,6 @@
     </scenes>
     <resources>
         <image name="background" width="320" height="568"/>
-        <image name="button-off" width="261" height="49"/>
-        <image name="button-on" width="261" height="47"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
