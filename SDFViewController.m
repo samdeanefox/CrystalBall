@@ -15,6 +15,7 @@
 
 @implementation SDFViewController
 
+#pragma mark - View Did Load
 - (void)viewDidLoad
 //THIS CODE LAUNCHES ONLY ONCE WHEN THE VIEW IS LOADED/
 {
@@ -84,31 +85,31 @@
                                 nil];
     self.backgroundImageView.animationDuration = 2.5f;
     self.backgroundImageView.animationRepeatCount = 1;
-    
-    /*
-    //Add background image
-    UIImage *backgroundImage = [UIImage imageNamed:@"background"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:backgroundImage];
-    [self.view insertSubview:(imageView) atIndex:0];
-    */
 }
 
+#pragma mark - Memory Warning
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
 
 
-#pragma mark -Prediction
+#pragma mark - Prediction
 -(void) makePrediction {
     [self.backgroundImageView startAnimating];
     self.predictionLabel.text = [self.crystalBall randomPrediction];
+    
+    [UIView animateWithDuration:6.5 animations:^{
+        self.predictionLabel.alpha = 1.0f;
+    }];
 }
 
 
 #pragma mark - Motion Events
 -(void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     NSLog(@"motion began");
+    self.predictionLabel.text = nil;
+    self.predictionLabel.alpha = 0.0f;
 }
 
 -(void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
@@ -126,6 +127,7 @@
 #pragma mark - Touch Events
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     self.predictionLabel.text = nil;
+    self.predictionLabel.alpha = 0.0f;
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
