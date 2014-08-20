@@ -8,18 +8,28 @@
 
 #import "SDFViewController.h"
 #import "SDFCrystalBall.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface SDFViewController ()
 
 @end
 
-@implementation SDFViewController
+@implementation SDFViewController {
+    SystemSoundID soundEffect;
+}
 
 #pragma mark - View Did Load
 - (void)viewDidLoad
 //THIS CODE LAUNCHES ONLY ONCE WHEN THE VIEW IS LOADED/
 {
     [super viewDidLoad];
+    
+    //Initialize sound
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"crystal_ball" ofType:@"mp3"];
+    NSURL *soundURL = [NSURL fileURLWithPath: soundPath];
+    AudioServicesCreateSystemSoundID(CFBridgingRetain(soundURL), &soundEffect);
+    
+    //Initialize animation with images
     self.crystalBall = [[SDFCrystalBall alloc] init];
     self.backgroundImageView.animationImages = [[NSArray alloc] initWithObjects:
     [UIImage imageNamed:@"CB00001"],
@@ -96,9 +106,14 @@
 
 #pragma mark - Prediction
 -(void) makePrediction {
+    //Animate Ball Image
     [self.backgroundImageView startAnimating];
     self.predictionLabel.text = [self.crystalBall randomPrediction];
     
+    //Play Sound
+    AudioServicesPlaySystemSound(soundEffect);
+    
+    //Fade Text in
     [UIView animateWithDuration:6.5 animations:^{
         self.predictionLabel.alpha = 1.0f;
     }];
