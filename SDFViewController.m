@@ -25,8 +25,11 @@
     [super viewDidLoad];
     
     //Initialize sound
+    //Get file path
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"crystal_ball" ofType:@"mp3"];
+    //Get file URL
     NSURL *soundURL = [NSURL fileURLWithPath: soundPath];
+    //Init
     AudioServicesCreateSystemSoundID(CFBridgingRetain(soundURL), &soundEffect);
     
     //Initialize animation with images
@@ -129,9 +132,9 @@
 
 -(void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     NSLog(@"motion ended");
-    if(motion == UIEventSubtypeMotionShake) {
+    //if(motion == UIEventSubtypeMotionShake) {
         [self makePrediction];
-    }
+    //}
 }
 
 -(void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event {
